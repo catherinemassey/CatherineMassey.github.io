@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catherine — Marketing + Communications</title>
+<meta name="description" content="Scientist turned strategist. Formally trained in pattern recognition. Informally trained in everything else.">
+<meta property="og:title" content="Catherine — Marketing + Communications">
+<meta property="og:description" content="Scientist turned strategist. Formally trained in pattern recognition. Informally trained in everything else.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-preview.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --chocolate: #362017;
+    --chocolate-mid: #4A2E1F;
+    --ivory: #F2EDE8;
+    --ivory-dark: #D9CFC4;
+    --burgundy: #6B0F1A;
+    --olive: #4A5C1A;
+    --leather: #8C6A4A;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ivory);
+    color: var(--chocolate);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--chocolate);
+    border-bottom: 1px solid rgba(107,15,26,0.6);
+    padding: 0 4rem;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-brand {
+    font-family: var(--serif);
+    font-size: 15px;
+    color: var(--ivory);
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--leather);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ivory); }
+
+  /* ── HERO ── */
+  #hero {
+    background: var(--chocolate);
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 4rem 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-rule {
+    position: absolute;
+    top: 0; right: 0;
+    width: 1px;
+    height: 100%;
+    background: var(--burgundy);
+    opacity: 0.4;
+    right: 33%;
+  }
+  .hero-bg-dot {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    border: 1px solid rgba(107,15,26,0.18);
+    top: 10%;
+    right: -80px;
+  }
+  .hero-content {
+    max-width: 760px;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeUp 0.9s ease 0.2s forwards;
+  }
+  .hero-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--leather);
+    margin-bottom: 2rem;
+  }
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(58px, 9vw, 104px);
+    font-weight: 400;
+    color: var(--ivory);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    margin-bottom: 2rem;
+  }
+  .hero-rule {
+    width: 48px;
+    height: 2px;
+    background: var(--burgundy);
+    margin-bottom: 2rem;
+  }
+  .hero-tagline {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(17px, 2.2vw, 21px);
+    color: var(--ivory);
+    opacity: 0.82;
+    max-width: 520px;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+  }
+  .hero-meta {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--leather);
+  }
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 4rem;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--leather);
+    writing-mode: vertical-rl;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-scroll::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 48px;
+    background: var(--burgundy);
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SHARED SECTION ── */
+  .section {
+    padding: 7rem 4rem;
+    border-bottom: 0.5px solid var(--ivory-dark);
+  }
+  .section:last-of-type { border-bottom: none; }
+  .section-inner { max-width: 900px; margin: 0 auto; }
+  .section-num {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--leather);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 400;
+    color: var(--chocolate);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin-bottom: 3rem;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .about-lead {
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.65;
+    color: var(--chocolate);
+    margin-bottom: 1.5rem;
+  }
+  .about-body {
+    font-size: 14px;
+    color: rgba(54,32,23,0.72);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+  .about-sidebar { }
+  .sidebar-card {
+    background: var(--chocolate);
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-bottom: 16px;
+  }
+  .sidebar-label {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--leather);
+    margin-bottom: 1rem;
+  }
+  .sidebar-rule {
+    width: 28px;
+    height: 1px;
+    background: var(--burgundy);
+    margin: 1rem 0;
+  }
+  .pillar {
+    padding: 10px 0;
+    border-bottom: 0.5px solid rgba(242,237,232,0.12);
+  }
+  .pillar:last-child { border-bottom: none; }
+  .pillar-title {
+    font-family: var(--serif);
+    font-size: 15px;
+    color: var(--ivory);
+    margin-bottom: 3px;
+  }
+  .pillar-desc {
+    font-size: 12px;
+    color: rgba(242,237,232,0.55);
+    line-height: 1.5;
+  }
+  .path-item {
+    display: flex;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 0.5px solid var(--ivory-dark);
+  }
+  .path-item:last-child { border-bottom: none; }
+  .path-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--burgundy);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+  .path-org {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--chocolate);
+    letter-spacing: 0.01em;
+    margin-bottom: 2px;
+  }
+  .path-frame {
+    font-size: 12px;
+    color: rgba(54,32,23,0.6);
+    line-height: 1.5;
+  }
+
+  /* ── CASE STUDY ── */
+  #case-study {
+    background: var(--chocolate);
+  }
+  #case-study .section-num { color: var(--leather); }
+  #case-study .section-title { color: var(--ivory); }
+  .cs-intro {
+    font-size: 14px;
+    color: rgba(242,237,232,0.6);
+    line-height: 1.8;
+    max-width: 580px;
+    margin-bottom: 3rem;
+  }
+  .cs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+  .cs-cell {
+    background: var(--chocolate-mid);
+    padding: 1.75rem;
+  }
+  .cs-cell-label {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--leather);
+    margin-bottom: 0.75rem;
+  }
+  .cs-cell-text {
+    font-size: 13px;
+    color: rgba(242,237,232,0.75);
+    line-height: 1.7;
+  }
+  .cs-cell-title {
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--ivory);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  .metric-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+  .metric-cell {
+    background: var(--chocolate-mid);
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .metric-num {
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--ivory);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .metric-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--leather);
+  }
+  .metric-note {
+    font-size: 11px;
+    color: rgba(242,237,232,0.35);
+    margin-top: 4px;
+  }
+  .cs-quote {
+    border-left: 2px solid var(--burgundy);
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    margin: 2rem 0;
+  }
+  .cs-quote p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 17px;
+    color: rgba(242,237,232,0.8);
+    line-height: 1.6;
+  }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .step-cell {
+    background: var(--chocolate-mid);
+    padding: 1.5rem;
+  }
+  .step-num {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--leather);
+    margin-bottom: 0.75rem;
+  }
+  .step-title {
+    font-family: var(--serif);
+    font-size: 15px;
+    color: var(--ivory);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  .step-desc {
+    font-size: 12px;
+    color: rgba(242,237,232,0.55);
+    line-height: 1.6;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .skill-card {
+    background: white;
+    border: 0.5px solid var(--ivory-dark);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .skill-card-label {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--leather);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 0.5px solid var(--ivory-dark);
+  }
+  .skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .skill-list li {
+    font-size: 13px;
+    color: rgba(54,32,23,0.8);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.5;
+  }
+  .skill-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--burgundy);
+    flex-shrink: 0;
+  }
+  .olive-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: rgba(74,92,26,0.1);
+    color: var(--olive);
+    border: 0.5px solid rgba(74,92,26,0.25);
+    border-radius: 999px;
+    padding: 3px 10px;
+    margin: 3px 2px;
+  }
+  .tag-cloud {
+    margin-top: 0.75rem;
+  }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--chocolate); }
+  #contact .section-title { color: var(--ivory); }
+  #contact .section-num { color: var(--leather); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .contact-intro {
+    font-size: 14px;
+    color: rgba(242,237,232,0.6);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 0.5px solid rgba(242,237,232,0.1);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .contact-link:last-of-type { border-bottom: none; }
+  .contact-link:hover { opacity: 0.7; }
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--chocolate-mid);
+    border: 0.5px solid rgba(140,106,74,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-icon svg { width: 16px; height: 16px; stroke: var(--leather); stroke-width: 1.5; fill: none; }
+  .contact-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--leather);
+    margin-bottom: 2px;
+  }
+  .contact-value {
+    font-size: 13px;
+    color: rgba(242,237,232,0.8);
+  }
+  .contact-preview {
+    background: var(--chocolate-mid);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 0.5px solid rgba(140,106,74,0.2);
+  }
+  .preview-name {
+    font-family: var(--serif);
+    font-size: 28px;
+    color: var(--ivory);
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+  .preview-role {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--leather);
+    margin-bottom: 1.25rem;
+  }
+  .preview-rule {
+    width: 32px;
+    height: 1px;
+    background: var(--burgundy);
+    margin-bottom: 1.25rem;
+  }
+  .preview-tagline {
+    font-size: 13px;
+    color: rgba(242,237,232,0.7);
+    line-height: 1.7;
+    max-width: 340px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--chocolate);
+    border-top: 1px solid rgba(107,15,26,0.4);
+    padding: 2.5rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer .footer-name {
+    font-family: var(--serif);
+    font-size: 16px;
+    color: var(--ivory);
+  }
+  footer p {
+    font-size: 11px;
+    color: var(--leather);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    #hero { padding: 0 1.5rem 4rem; }
+    .section { padding: 5rem 1.5rem; }
+    .about-grid,
+    .contact-grid,
+    .skills-grid { grid-template-columns: 1fr; gap: 24px; }
+    .cs-grid,
+    .metric-row { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    footer { flex-direction: column; gap: 8px; text-align: center; padding: 2rem 1.5rem; }
+    .hero-scroll { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-brand">Catherine</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#case-study">SCNPS</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-rule"></div>
+  <div class="hero-bg-dot"></div>
+  <div class="hero-content">
+    <p class="hero-label">Marketing + Communications &nbsp;·&nbsp; Columbia, SC</p>
+    <h1 class="hero-name">Catherine</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-tagline">Scientist turned strategist. Formally trained in pattern recognition. Informally trained in everything else.</p>
+    <p class="hero-meta">Available for marketing + communications roles &nbsp;·&nbsp; 2025</p>
+  </div>
+  <span class="hero-scroll" aria-hidden="true">Scroll</span>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="section-inner">
+    <p class="section-num">01</p>
+    <h2 class="section-title">The path is the argument.</h2>
+    <div class="about-grid">
+      <div>
+        <p class="about-lead">I bring scientific rigor and aesthetic intelligence to marketing — and I built myself from scratch doing it.</p>
+        <p class="about-body">Biology trained me to observe carefully, hypothesize precisely, and iterate without ego. Dance and arts training gave me pattern recognition for what's beautiful and why. A nonlinear path through aquaculture fieldwork, pharmaceutical manufacturing, and industrial systems gave me cross-sector fluency most MarComms candidates simply don't have.</p>
+        <p class="about-body">I don't frame these as gaps. I frame them as cross-training. Every domain sharpens a different kind of attention. The range is the edge.</p>
+        <p class="about-body">Currently: rebuilding the SC Native Plant Society Midlands Chapter's marketing and communications presence from the ground up. Audience research, content systems, membership strategy, board role integration. Live proof of strategic work in progress.</p>
+      </div>
+      <div class="about-sidebar">
+        <div class="sidebar-card">
+          <p class="sidebar-label">Brand pillars</p>
+          <div class="sidebar-rule"></div>
+          <div class="pillar">
+            <p class="pillar-title">Scientific rigor</p>
+            <p class="pillar-desc">Observe, hypothesize, test, iterate. Biology as a framework for strategy.</p>
+          </div>
+          <div class="pillar">
+            <p class="pillar-title">Aesthetic intelligence</p>
+            <p class="pillar-desc">Arts training, color analysis, taste. Beauty as a system, not decoration.</p>
+          </div>
+          <div class="pillar">
+            <p class="pillar-title">Unconventional range</p>
+            <p class="pillar-desc">Cross-trained, not unfocused. Every sector sharpened a different skill.</p>
+          </div>
+        </div>
+        <div>
+          <p class="sidebar-label" style="color: var(--leather); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.75rem;">Path as cross-training</p>
+          <div class="path-item">
+            <div class="path-dot"></div>
+            <div>
+              <p class="path-org">SCDNR</p>
+              <p class="path-frame">Scientific fieldwork and technical communication at scale.</p>
+            </div>
+          </div>
+          <div class="path-item">
+            <div class="path-dot"></div>
+            <div>
+              <p class="path-org">Nephron Pharmaceuticals</p>
+              <p class="path-frame">Precision documentation in regulated, high-stakes environments.</p>
+            </div>
+          </div>
+          <div class="path-item">
+            <div class="path-dot"></div>
+            <div>
+              <p class="path-org">Technetics Group</p>
+              <p class="path-frame">Industrial systems, process discipline, operational clarity.</p>
+            </div>
+          </div>
+          <div class="path-item">
+            <div class="path-dot"></div>
+            <div>
+              <p class="path-org">SCNPS Midlands Chapter</p>
+              <p class="path-frame">Strategic rebuild from the ground up. Live and ongoing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section id="case-study" class="section">
+  <div class="section-inner">
+    <p class="section-num">02</p>
+    <h2 class="section-title">SCNPS Midlands Chapter</h2>
+    <p class="cs-intro">Inherited a disorganized, inconsistent, non-strategic marketing presence in April 2025. Currently rebuilding it from the ground up with a focus on growing, converting, and retaining membership. This is live portfolio work.</p>
+
+    <div class="cs-grid">
+      <div class="cs-cell">
+        <p class="cs-cell-label">The problem</p>
+        <p class="cs-cell-title">No system. No strategy. No baseline.</p>
+        <p class="cs-cell-text">The chapter had a fragmented presence across channels with no consistent voice, no visual identity, no content calendar, and no way to measure what was working. Board roles had unclear interfaces with marketing.</p>
+      </div>
+      <div class="cs-cell">
+        <p class="cs-cell-label">The approach</p>
+        <p class="cs-cell-title">Audit first. Build systems before content.</p>
+        <p class="cs-cell-text">Conducted audience and psychographic research. Defined SMART membership goals. Mapped board roles to data, budget, and content functions. Built frameworks before producing a single asset.</p>
+      </div>
+    </div>
+
+    <div class="metric-row">
+      <div class="metric-cell">
+        <p class="metric-num">0</p>
+        <p class="metric-label">Systems inherited</p>
+        <p class="metric-note">No calendar, no voice guide, no analytics baseline</p>
+      </div>
+      <div class="metric-cell">
+        <p class="metric-num">4</p>
+        <p class="metric-label">Board roles mapped</p>
+        <p class="metric-note">Membership, Treasurer, Education, Projects integrated into strategy</p>
+      </div>
+      <div class="metric-cell">
+        <p class="metric-num">→</p>
+        <p class="metric-label">Results in progress</p>
+        <p class="metric-note">Documenting the build now. Outcomes updated as they arrive.</p>
+      </div>
+    </div>
+
+    <div class="cs-quote">
+      <p>"Documenting the build is itself the portfolio. Results-based content follows once the system has had time to work."</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="step-cell">
+        <p class="step-num">Step 01</p>
+        <p class="step-title">Audience research</p>
+        <p class="step-desc">Psychographic profiling of current and target members. Values, identity, barriers to joining.</p>
+      </div>
+      <div class="step-cell">
+        <p class="step-num">Step 02</p>
+        <p class="step-title">SMART goals</p>
+        <p class="step-desc">Defined measurable membership targets. Grow, convert, and retain as three distinct objectives.</p>
+      </div>
+      <div class="step-cell">
+        <p class="step-num">Step 03</p>
+        <p class="step-title">Systems build</p>
+        <p class="step-desc">Content calendar, brand voice guide, channel strategy, and board integration frameworks.</p>
+      </div>
+      <div class="step-cell">
+        <p class="step-num">Step 04</p>
+        <p class="step-title">Execution + iteration</p>
+        <p class="step-desc">Content live. Tracking membership movement against baseline. Adjusting as data arrives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="section-inner">
+    <p class="section-num">03</p>
+    <h2 class="section-title">Skills + fluencies</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <p class="skill-card-label">Strategy + communications</p>
+        <ul class="skill-list">
+          <li>Campaign development and messaging</li>
+          <li>Audience and psychographic research</li>
+          <li>Content systems and editorial planning</li>
+          <li>Membership strategy and lifecycle</li>
+          <li>Brand voice and identity development</li>
+          <li>Cross-channel adaptation</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <p class="skill-card-label">Design + visual</p>
+        <ul class="skill-list">
+          <li>Color systems and typography</li>
+          <li>Layout hierarchy and spacing logic</li>
+          <li>Brand guidelines development</li>
+          <li>Campaign asset creation</li>
+          <li>Canva (proficient); Figma (developing)</li>
+          <li>Deep autumn color analysis applied to brand</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <p class="skill-card-label">Science + analytical</p>
+        <ul class="skill-list">
+          <li>Pattern recognition from biology training</li>
+          <li>Precision in regulated documentation</li>
+          <li>Hypothesis-driven testing and iteration</li>
+          <li>Data interpretation for strategy</li>
+          <li>Technical writing and scientific communication</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <p class="skill-card-label">Cross-sector fluency</p>
+        <div class="tag-cloud">
+          <span class="olive-tag">Environmental nonprofit</span>
+          <span class="olive-tag">Pharmaceutical</span>
+          <span class="olive-tag">Industrial manufacturing</span>
+          <span class="olive-tag">State government</span>
+          <span class="olive-tag">Scientific fieldwork</span>
+          <span class="olive-tag">Aquaculture</span>
+        </div>
+        <p class="about-body" style="margin-top: 1rem; font-size: 12px;">Each sector trained a different kind of attention. The range is the differentiator, not the liability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="section-inner">
+    <p class="section-num">04</p>
+    <h2 class="section-title">Let's work together.</h2>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-intro">I'm actively building toward marketing and communications roles. If you're looking for someone who brings strategic thinking, aesthetic sensibility, and cross-sector range — I'd like to talk.</p>
+        <a href="https://linkedin.com" class="contact-link" target="_blank" rel="noopener">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <div>
+            <p class="contact-label">LinkedIn</p>
+            <p class="contact-value">linkedin.com/in/catherine</p>
+          </div>
+        </a>
+        <a href="mailto:catherine@email.com" class="contact-link">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <p class="contact-label">Email</p>
+            <p class="contact-value">catherine@email.com</p>
+          </div>
+        </a>
+        <a href="https://github.com" class="contact-link" target="_blank" rel="noopener">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </div>
+          <div>
+            <p class="contact-label">GitHub</p>
+            <p class="contact-value">github.com/catherine</p>
+          </div>
+        </a>
+      </div>
+      <div class="contact-preview">
+        <p class="preview-name">Catherine</p>
+        <p class="preview-role">Marketing + Communications &nbsp;·&nbsp; Columbia, SC</p>
+        <div class="preview-rule"></div>
+        <p class="preview-tagline">Scientist turned strategist. Formally trained in pattern recognition. Informally trained in everything else.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Catherine</span>
+  <p>Marketing + Communications &nbsp;·&nbsp; Columbia, SC &nbsp;·&nbsp; 2025</p>
+</footer>
+
+</body>
+</html>
